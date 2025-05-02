@@ -19,10 +19,52 @@
             direction: rtl;
         }
 
-        header {
-            background: linear-gradient(90deg, #005cbf, #002e7a);
+        .date-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(90deg, #002e7a, #005cbf);
             color: white;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .date-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .separator {
+            opacity: 0.5;
+        }
+
+        .hebrew-date {
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        .gregorian-date {
+            font-family: 'Assistant', sans-serif;
+        }
+
+        .b-s-d {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-weight: 700;
+            color: #ffd700;
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            margin-top: 30px;
+            background: linear-gradient(135deg, #002e7a, #005cbf);
+            color: white;
             padding: 2rem;
             position: relative;
             overflow: hidden;
@@ -40,23 +82,127 @@
             z-index: 1;
         }
 
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .header-main {
+            text-align: right;
+        }
+
         header h1 {
             margin: 0;
             font-size: 2.5rem;
             font-weight: 900;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            position: relative;
-            z-index: 2;
             letter-spacing: 1px;
+            color: #ffd700;
         }
 
         header p {
             font-size: 1.2rem;
             margin-top: 0.5rem;
-            position: relative;
-            z-index: 2;
             opacity: 0.9;
             font-weight: 500;
+            color: #ffffff;
+        }
+
+        .header-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            will-change: transform;
+        }
+
+        .header-section h2 {
+            color: #ffd700;
+            margin: 0 0 1rem 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-section p {
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .toc-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            will-change: transform;
+        }
+
+        .toc-category h3 {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin: 0 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .toc-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.15s ease-out;
+            will-change: transform, background-color;
+        }
+
+        .toc-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(-3px);
+        }
+
+        .toc-item.active {
+            background: rgba(255, 215, 0, 0.2);
+            border-left: 3px solid #ffd700;
+            transform: translateX(-3px);
+        }
+
+        .toc-item .title {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .toc-item .tag {
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .header-section h2 {
+                font-size: 1.2rem;
+            }
         }
 
         .section {
@@ -213,6 +359,7 @@
 
         /* סגנונות חדשים לתפילה */
         .prayer-container {
+            display: none;
             position: relative;
             margin: 2rem 0;
             width: 100%;
@@ -222,6 +369,13 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            will-change: transform, opacity;
+            transition: opacity 0.2s ease-out;
+        }
+
+        .prayer-container.active {
+            display: block;
+            opacity: 1;
         }
 
         .prayer-container.first {
@@ -234,6 +388,30 @@
 
         .prayer-container.third {
             background-image: url('./2.png');
+        }
+
+        .prayer-container.fourth {
+            background-image: url('./3.png');
+        }
+
+        .prayer-container.fifth {
+            background-image: url('./4.png');
+        }
+
+        .prayer-container.sixth {
+            background-image: url('./5.png');
+        }
+
+        .prayer-container.seventh {
+            background-image: url('./6.png');
+        }
+
+        .prayer-container.eighth {
+            background-image: url('./7.png');
+        }
+
+        .prayer-container.ninth {
+            background-image: url('./8.png');
         }
 
         .prayer-content {
@@ -250,6 +428,7 @@
             font-family: 'Frank Ruhl Libre', serif;
             color: #ffd700;
             text-align: center;
+            will-change: transform;
         }
 
         .prayer-content h3 {
@@ -325,23 +504,148 @@
                 line-height: 1.4;
             }
         }
+
+        .toc-container {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-category {
+            margin-bottom: 2rem;
+        }
+
+        .toc-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .toc-category h3 {
+            color: #002e7a;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(0, 46, 122, 0.1);
+        }
+
+        .toc-item {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .toc-item:hover {
+            background-color: rgba(0, 46, 122, 0.1);
+        }
+
+        .toc-item.active {
+            background-color: rgba(0, 46, 122, 0.15);
+        }
+
+        .toc-item .status {
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .toc-item .title {
+            flex-grow: 1;
+            color: #333;
+        }
+
+        .toc-item .tag {
+            background: rgba(0, 46, 122, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #002e7a;
+            margin-right: 0.5rem;
+        }
     </style>
 </head>
 
 <body>
+    <script src="date-bar.js"></script>
     <header>
-        <h1>ישראל 77-5786</h1>
-        <p>מסע רוחני ומיסטי ביום העצמאות – תפילה, שירה, חזון ועוצמה</p>
-    </header>
+        <div class="header-content">
+            <div class="header-main">
+                <h1>ישראל 77-5786</h1>
+                <p>מסע רוחני ומיסטי ביום העצמאות – תפילה, שירה, חזון ועוצמה</p>
 
-    <div class="section">
-        <h2>✨ על הפרויקט</h2>
-        <p>
-            פרויקט "ישראל 77-5786" הוא יצירה משולבת של שירה, חזון, תפילה וגרפיקה מיסטית, המובלת על ידי הרב משה לאון
-            יעקובוב.
-            הפרויקט נולד מתוך רצון לקדש את חג העצמאות באור של קדושה, זוהר וחזון רוחני עמוק.
-        </p>
-    </div>
+                <div class="header-section">
+                    <h2>✨ על הפרויקט</h2>
+                    <p>
+                        פרויקט "ישראל 77-5786" הוא יצירה משולבת של שירה, חזון, תפילה וגרפיקה מיסטית, המובלת על ידי הרב
+                        משה לאון
+                        יעקובוב.
+                        הפרויקט נולד מתוך רצון לקדש את חג העצמאות באור של קדושה, זוהר וחזון רוחני עמוק.
+                    </p>
+                </div>
+            </div>
+
+            <div class="toc-container">
+                <div class="toc-category">
+                    <h3>📚 תוכן עניינים - מזמורי תפילה</h3>
+                    <div class="toc-list">
+                        <div class="toc-item" data-prayer="first">
+                            <span class="status">✅</span>
+                            <span class="title">מִזְמוֹר הַשַּׁחַר הַזּוֹהֵר</span>
+                            <span class="tag">אוֹר מִן הַמַּרְאֶה</span>
+                        </div>
+                        <div class="toc-item" data-prayer="second">
+                            <span class="status">✅</span>
+                            <span class="title">מִזְמוֹר שִׁבְעִים וְשֶׁבַע</span>
+                            <span class="tag">תְּהִלָּה לַתְּקוּמָה</span>
+                        </div>
+                        <div class="toc-item" data-prayer="third">
+                            <span class="status">✅</span>
+                            <span class="title">מזמור לתשפ"ו</span>
+                            <span class="tag">שבעים ושבע שנות תחייה</span>
+                        </div>
+                        <div class="toc-item" data-prayer="fourth">
+                            <span class="status">✅</span>
+                            <span class="title">מִזְמוֹר הַגְּאֻלָּה וְהַתְּקוּמָה</span>
+                            <span class="tag">שִׁיר לְיוֹם הַחֵרוּת</span>
+                        </div>
+                        <div class="toc-item" data-prayer="fifth">
+                            <span class="status">✅</span>
+                            <span class="title">מִזְמוֹר הָאַחְדוּת</span>
+                            <span class="tag">שִׁיר לְאַחִים גַּם יַחְדָּו</span>
+                        </div>
+                        <div class="toc-item" data-prayer="sixth">
+                            <span class="status">✅</span>
+                            <span class="title">שִׁיר הַמַּעֲלוֹת לִירוּשָׁלַיִם</span>
+                            <span class="tag">מִזְמוֹר לְצִיּוֹן הַמְּקֻדֶּשֶׁת</span>
+                        </div>
+                        <div class="toc-item" data-prayer="seventh">
+                            <span class="status">✅</span>
+                            <span class="title">מִזְמוֹר הַשָּׁלוֹם וְהַבְּרָכָה</span>
+                            <span class="tag">תְּפִלָּה לְשָׁלוֹם הָאָרֶץ</span>
+                        </div>
+                        <div class="toc-item" data-prayer="eighth">
+                            <span class="status">✅</span>
+                            <span class="title">מִזְמוֹר הַתְּקוּמָה וְהַתְּחִיָּה</span>
+                            <span class="tag">שִׁיר לְדוֹר הַתְּקוּמָה</span>
+                        </div>
+                        <div class="toc-item" data-prayer="ninth">
+                            <span class="status">✅</span>
+                            <span class="title">מִזְמוֹר הַחֲלוֹם וְהַתִּקְוָה</span>
+                            <span class="tag">שִׁיר לְעוֹלָם הַבָּא</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <div class="section">
         <h2>📖 מזמורי תפילה ליום העצמאות</h2>
@@ -432,6 +736,198 @@
                 </div>
             </div>
         </div>
+
+        <div class="prayer-container fourth">
+            <div class="prayer-content">
+                <h3>מִזְמוֹר הַגְּאֻלָּה וְהַתְּקוּמָה</h3>
+                <h4>שִׁיר לְיוֹם הַחֵרוּת</h4>
+                <div class="prayer-text">
+                    קוּמִי אוֹרִי כִּי בָא אוֹרֵךְ, וּכְבוֹד ה' עָלַיִךְ זָרָח.<br>
+                    הִנֵּה הַחֹשֶׁךְ יְכַסֶּה אֶרֶץ, וַעֲרָפֶל לְאֻמִּים,<br>
+                    וְעָלַיִךְ יִזְרַח ה', וּכְבוֹדוֹ עָלַיִךְ יֵרָאֶה.<br><br>
+
+                    וְהָלְכוּ גּוֹיִם לְאוֹרֵךְ, וּמְלָכִים לְנֹגַהּ זַרְחֵךְ.<br>
+                    שְׂאִי סָבִיב עֵינַיִךְ וּרְאִי, כֻּלָּם נִקְבְּצוּ בָאוּ לָךְ,<br>
+                    בָּנַיִךְ מֵרָחוֹק יָבֹאוּ, וּבְנוֹתַיִךְ עַל צַד תֵּאָמַנָה.<br><br>
+
+                    אָז תִּרְאִי וְנָהַרְתְּ, וּפָחַד וְרָחַב לְבָבֵךְ,<br>
+                    כִּי יֵהָפֵךְ עָלַיִךְ הֲמוֹן יָם, חֵיל גּוֹיִם יָבֹאוּ לָךְ.<br>
+                    שְׂרָפִים יְשַׁבְּחוּךְ, וּמַלְאֲכֵי שָׁלוֹם יְבַכְּרוּךְ.<br><br>
+
+                    פִּתְחִי שַׁעֲרַיִךְ תָּמִיד, יוֹמָם וָלַיְלָה לֹא יִסָּגֵרוּ,<br>
+                    לְהָבִיא אֵלַיִךְ חֵיל גּוֹיִם, וּמַלְכֵיהֶם נְהוּגִים.<br>
+                    כִּי הַגּוֹי וְהַמַּמְלָכָה אֲשֶׁר לֹא יַעַבְדוּךְ יֹאבֵדוּ,<br>
+                    וְהַגּוֹיִם חָרֹב יֶחֱרָבוּ.<br><br>
+                </div>
+                <div class="prayer-blessing">
+                    הַלְלוּיָהּ לְאֵל עֶלְיוֹן, מֶלֶךְ מַלְכֵי הַמְּלָכִים,<br>
+                    שֶׁהֵבִיא גְּאֻלָּה לְעַמּוֹ, וּפְדוּת לְנַחֲלָתוֹ.<br>
+                    יִהְיוּ לְרָצוֹן אִמְרֵי פִינוּ, וְהֶגְיוֹן לִבֵּנוּ לְפָנֶיךָ ה' צוּרֵנוּ וְגֹאֲלֵנוּ.
+                </div>
+            </div>
+        </div>
+
+        <div class="prayer-container fifth">
+            <div class="prayer-content">
+                <h3>מִזְמוֹר הָאַחְדוּת</h3>
+                <h4>שִׁיר לְאַחִים גַּם יַחְדָּו</h4>
+                <div class="prayer-text">
+                    הִנֵּה מַה טּוֹב וּמַה נָּעִים, שֶׁבֶת אַחִים גַּם יַחַד.<br>
+                    כְּשֶׁמֶן הַטּוֹב עַל הָרֹאשׁ, יֹרֵד עַל הַזָּקָן זְקַן אַהֲרֹן.<br><br>
+
+                    כְּטַל חֶרְמוֹן שֶׁיֹּרֵד עַל הַרְרֵי צִיּוֹן,<br>
+                    כִּי שָׁם צִוָּה ה' אֶת הַבְּרָכָה, חַיִּים עַד הָעוֹלָם.<br><br>
+
+                    אַחִים אֲנַחְנוּ, בְּנֵי אָב אֶחָד,<br>
+                    בְּלֵב אֶחָד נְהַלֵּךְ בְּדֶרֶךְ אֱמוּנָה.<br>
+                    לֹא יִשָּׂא גּוֹי אֶל גּוֹי חֶרֶב,<br>
+                    וְלֹא יִלְמְדוּ עוֹד מִלְחָמָה.<br><br>
+
+                    בְּשָׁלוֹם יַחְדָּו אֶשְׁכְּבָה וְאִישָׁן,<br>
+                    כִּי אַתָּה ה' לְבָדָד לָבֶטַח תּוֹשִׁיבֵנִי.<br>
+                    וְעַל כַּנְפֵי נְשָׁרִים יִשָּׂאוּנִי,<br>
+                    וְאֶל הַר קָדְשְׁךָ יְבִיאוּנִי.<br><br>
+                </div>
+                <div class="prayer-blessing">
+                    בָּרוּךְ אַתָּה ה' מְיַחֵד עַמּוֹ יִשְׂרָאֵל בְּאַהֲבָה,<br>
+                    מְקַבֵּץ נִדְחֵי עַמּוֹ יִשְׂרָאֵל מֵאַרְבַּע כַּנְפוֹת הָאָרֶץ.<br>
+                    יִהְיוּ לְרָצוֹן אִמְרֵי פִינוּ וְהֶגְיוֹן לִבֵּנוּ לְפָנֶיךָ ה' צוּרֵנוּ וְגֹאֲלֵנוּ.
+                </div>
+            </div>
+        </div>
+
+        <div class="prayer-container sixth">
+            <div class="prayer-content">
+                <h3>שִׁיר הַמַּעֲלוֹת לִירוּשָׁלַיִם</h3>
+                <h4>מִזְמוֹר לְצִיּוֹן הַמְּקֻדֶּשֶׁת</h4>
+                <div class="prayer-text">
+                    שִׁיר הַמַּעֲלוֹת, בְּשׁוּב ה' אֶת שִׁיבַת צִיּוֹן,<br>
+                    הָיִינוּ כְּחֹלְמִים, כְּמוֹ חֲלוֹם תַּעֲלוּמָה.<br>
+                    אָז יִמָּלֵא שְׂחוֹק פִּינוּ, וּלְשׁוֹנֵנוּ רִנָּה,<br>
+                    אָז יֹאמְרוּ בַגּוֹיִם, הִגְדִּיל ה' לַעֲשׂוֹת עִם אֵלֶּה.<br><br>
+
+                    יְרוּשָׁלַיִם הַבְּנוּיָה כְּעִיר שֶׁחֻבְּרָה לָּהּ יַחְדָּו,<br>
+                    שָׁם עָלוּ שְׁבָטִים שִׁבְטֵי יָהּ, עֵדוּת לְיִשְׂרָאֵל.<br>
+                    לְהֹדוֹת לְשֵׁם ה', כִּי שָׁם יָשְׁבוּ כִסְאוֹת לְמִשְׁפָּט,<br>
+                    כִּסְאוֹת לְבֵית דָּוִד.<br><br>
+
+                    שַׁאֲלוּ שְׁלוֹם יְרוּשָׁלַיִם, יִשְׁלָיוּ אֹהֲבָיִךְ,<br>
+                    יְהִי שָׁלוֹם בְּחֵילֵךְ, שַׁלְוָה בְּאַרְמְנוֹתָיִךְ.<br>
+                    לְמַעַן אַחַי וְרֵעָי, אֲדַבְּרָה נָּא שָׁלוֹם בָּךְ,<br>
+                    לְמַעַן בֵּית ה' אֱלֹהֵינוּ, אֲבַקְשָׁה טוֹב לָךְ.<br><br>
+
+                    הִנֵּה אֲנַחְנוּ בָּאנוּ אֶל הַמָּקוֹם אֲשֶׁר אָמַר ה',<br>
+                    זֹאת מְנוּחָתִי עֲדֵי עַד, פֹּה אֵשֵׁב כִּי אִוִּיתִיהָ.<br>
+                    וְעַל הַר צִיּוֹן שֶׁשָּׁמֵם, שׁוּעָלִים הִלְּכוּ בוֹ,<br>
+                    תָּקוּם וְתִבָּנֶה עִיר הָאֱלֹהִים.<br><br>
+                </div>
+                <div class="prayer-blessing">
+                    בָּרוּךְ אַתָּה ה' בּוֹנֵה יְרוּשָׁלַיִם,<br>
+                    מְקַבֵּץ נִדְחֵי עַמּוֹ יִשְׂרָאֵל מֵאַרְבַּע כַּנְפוֹת הָאָרֶץ.<br>
+                    יִהְיוּ לְרָצוֹן אִמְרֵי פִינוּ וְהֶגְיוֹן לִבֵּנוּ לְפָנֶיךָ ה' צוּרֵנוּ וְגֹאֲלֵנוּ.
+                </div>
+            </div>
+        </div>
+
+        <div class="prayer-container seventh">
+            <div class="prayer-content">
+                <h3>מִזְמוֹר הַשָּׁלוֹם וְהַבְּרָכָה</h3>
+                <h4>תְּפִלָּה לְשָׁלוֹם הָאָרֶץ</h4>
+                <div class="prayer-text">
+                    ה' יְבָרֵךְ אֶת עַמּוֹ בַשָּׁלוֹם,<br>
+                    וְיִתֵּן לָנוּ שָׁלוֹם מִכָּל עֲבָרָיו.<br>
+                    יְבָרֵךְ אֶת בָּתֵּינוּ וְאֶת שָׂדוֹתֵינוּ,<br>
+                    וְיִתֵּן שָׁלוֹם בָּאָרֶץ.<br><br>
+
+                    יְבָרֵךְ אֶת חֵילֵנוּ וְאֶת מַנְהִיגֵינוּ,<br>
+                    וְיִתֵּן בְּלִבָּם חָכְמָה וּתְבוּנָה.<br>
+                    יְבָרֵךְ אֶת יוֹצְאֵי צְבָאֵנוּ וְאֶת בָּאֵי שַׁעֲרֵינוּ,<br>
+                    וְיִתֵּן שָׁלוֹם בַּגְּבוּלוֹת.<br><br>
+
+                    יְבָרֵךְ אֶת עוֹלָמֵינוּ וְאֶת תַּלְמִידֵינוּ,<br>
+                    וְיִתֵּן בָּהֶם רוּחַ חָכְמָה וּבִינָה.<br>
+                    יְבָרֵךְ אֶת עֲבוֹדָתֵינוּ וְאֶת מַעֲשֵׂה יָדֵינוּ,<br>
+                    וְיִתֵּן שָׁלוֹם בַּמְּדִינָה.<br><br>
+
+                    יְבָרֵךְ אֶת כָּל יוֹשְׁבֵי תֵבֵל,<br>
+                    וְיִתֵּן שָׁלוֹם בָּעוֹלָם כֻּלּוֹ.<br>
+                    יְבָרֵךְ אֶת כָּל בְּנֵי הָאָדָם,<br>
+                    וְיִתֵּן שָׁלוֹם בֵּין הָאֻמּוֹת.<br><br>
+                </div>
+                <div class="prayer-blessing">
+                    בָּרוּךְ אַתָּה ה' מְבָרֵךְ עַמּוֹ יִשְׂרָאֵל בַּשָּׁלוֹם,<br>
+                    מֵבִיא גְּאֻלָּה לְעַמּוֹ יִשְׂרָאֵל בְּרַחֲמִים.<br>
+                    יִהְיוּ לְרָצוֹן אִמְרֵי פִינוּ וְהֶגְיוֹן לִבֵּנוּ לְפָנֶיךָ ה' צוּרֵנוּ וְגֹאֲלֵנוּ.
+                </div>
+            </div>
+        </div>
+
+        <div class="prayer-container eighth">
+            <div class="prayer-content">
+                <h3>מִזְמוֹר הַתְּקוּמָה וְהַתְּחִיָּה</h3>
+                <h4>שִׁיר לְדוֹר הַתְּקוּמָה</h4>
+                <div class="prayer-text">
+                    מֵעָפָר קַמְתִּי, מֵאֵפֶר נוֹעַרְתִּי,<br>
+                    כְּעֵץ שֶׁנִּטַּע עַל פַּלְגֵי מַיִם.<br>
+                    מִן הַגּוֹלָה הָעֲצוּמָה, מִן הַשְּׁאוֹל הַתַּחְתִּית,<br>
+                    הֵעִיר ה' אֶת רוּחִי, וַיְחַיֵּנִי מִן הַמֵּתִים.<br><br>
+
+                    הִנֵּה אֲנִי חַי, הִנֵּה אֲנִי קַיָּם,<br>
+                    כְּעֵץ פֹּרִיָּה בְּאֶרֶץ נְוֵה.<br>
+                    מִן הַחֹרֶב הָעֲצוּם, מִן הַשְּׁמָמָה הַגְּדוֹלָה,<br>
+                    הֵקִיץ ה' אֶת נַפְשִׁי, וַיְחַיֵּנִי מִן הַקֶּבֶר.<br><br>
+
+                    בָּנִיתִי בָּתִּים וְנָטַעְתִּי כְּרָמִים,<br>
+                    הֵקַמְתִּי עָרִים וְיִשַּׁבְתִּי בָּהֶן.<br>
+                    מִן הַחֻרְבָּן הָעַתִּיק, מִן הַשְּׁמָמָה הַיְשָׁנָה,<br>
+                    הֵעִיר ה' אֶת רוּחִי, וַיְחַיֵּנִי מִן הַמֵּתִים.<br><br>
+
+                    הִנֵּה אֲנִי חַי, הִנֵּה אֲנִי קַיָּם,<br>
+                    כְּעֵץ פֹּרִיָּה בְּאֶרֶץ נְוֵה.<br>
+                    מִן הַחֹרֶב הָעֲצוּם, מִן הַשְּׁמָמָה הַגְּדוֹלָה,<br>
+                    הֵקִיץ ה' אֶת נַפְשִׁי, וַיְחַיֵּנִי מִן הַקֶּבֶר.<br><br>
+                </div>
+                <div class="prayer-blessing">
+                    בָּרוּךְ אַתָּה ה' מְחַיֵּה הַמֵּתִים,<br>
+                    מֵבִיא גְּאֻלָּה לְעַמּוֹ יִשְׂרָאֵל בְּרַחֲמִים.<br>
+                    יִהְיוּ לְרָצוֹן אִמְרֵי פִינוּ וְהֶגְיוֹן לִבֵּנוּ לְפָנֶיךָ ה' צוּרֵנוּ וְגֹאֲלֵנוּ.
+                </div>
+            </div>
+        </div>
+
+        <div class="prayer-container ninth">
+            <div class="prayer-content">
+                <h3>מִזְמוֹר הַחֲלוֹם וְהַתִּקְוָה</h3>
+                <h4>שִׁיר לְעוֹלָם הַבָּא</h4>
+                <div class="prayer-text">
+                    בַּיָּמִים הָהֵם וּבָעֵת הַהִיא,<br>
+                    אָשִׁיב אֶת שְׁבוּת יְהוּדָה וִירוּשָׁלַיִם.<br>
+                    וְקִבַּצְתִּי אֶת כָּל הַגּוֹיִם,<br>
+                    וְהוֹרַדְתִּים אֶל עֵמֶק יְהוֹשָׁפָט.<br><br>
+
+                    וְשָׁפַטְתִּי אֶת כָּל הַגּוֹיִם מִסָּבִיב,<br>
+                    עַל עַמִּי וְנַחֲלָתִי יִשְׂרָאֵל.<br>
+                    אֲשֶׁר פִּזְּרוּ בַגּוֹיִם,<br>
+                    וְאֶת אַרְצִי חִלֵּקוּ.<br><br>
+
+                    וְעַל עַמִּי יַדּוּ גוֹרָל,<br>
+                    וַיִּתְּנוּ הַיֶּלֶד בַּזּוֹנָה,<br>
+                    וְהַיַּלְדָּה מָכְרוּ בַיַּיִן,<br>
+                    וַיִּשְׁתּוּ.<br><br>
+
+                    וְגַם מָה אַתֶּם לִי צֹר וְצִידוֹן,<br>
+                    וְכֹל גְּלִילוֹת פְּלָשֶׁת.<br>
+                    הַגְּמוּל אַתֶּם מְשַׁלְּמִים עָלָי,<br>
+                    וְאִם גֹּמְלִים אַתֶּם עָלַי,<br>
+                    קַל מְהֵרָה אָשִׁיב גְּמוּלְכֶם בְּרֹאשְׁכֶם.<br><br>
+                </div>
+                <div class="prayer-blessing">
+                    בָּרוּךְ אַתָּה ה' מְקַיֵּם הַבְּרִית וְהַחֶסֶד,<br>
+                    מֵבִיא גְּאֻלָּה לְעַמּוֹ יִשְׂרָאֵל בְּרַחֲמִים.<br>
+                    יִהְיוּ לְרָצוֹן אִמְרֵי פִינוּ וְהֶגְיוֹן לִבֵּנוּ לְפָנֶיךָ ה' צוּרֵנוּ וְגֹאֲלֵנוּ.
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="section">
@@ -488,6 +984,51 @@
     </footer>
     <script src="styles.js"></script>
     <script src="translations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tocItems = document.querySelectorAll('.toc-item');
+            const prayerContainers = document.querySelectorAll('.prayer-container');
+
+            // פונקציה להצגת תפילה מסוימת והסתרת השאר
+            function showPrayer(prayerId) {
+                // הסתרת כל התפילות
+                prayerContainers.forEach(container => {
+                    container.classList.remove('active');
+                });
+
+                // הסרת סימון פעיל מכל פריטי התוכן
+                tocItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // הצגת התפילה הנבחרת
+                const selectedPrayer = document.querySelector(`.prayer-container.${prayerId}`);
+                if (selectedPrayer) {
+                    selectedPrayer.classList.add('active');
+                }
+
+                // סימון הפריט הנבחר בתוכן העניינים
+                const selectedItem = document.querySelector(`.toc-item[data-prayer="${prayerId}"]`);
+                if (selectedItem) {
+                    selectedItem.classList.add('active');
+                }
+
+                // גלילה לתפילה הנבחרת
+                selectedPrayer.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // הוספת מאזיני אירועים לפריטי התוכן
+            tocItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    const prayerId = this.getAttribute('data-prayer');
+                    showPrayer(prayerId);
+                });
+            });
+
+            // הצגת התפילה הראשונה כברירת מחדל
+            showPrayer('first');
+        });
+    </script>
 </body>
 
 </html>
