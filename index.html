@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ישראל 77-5786 - פרויקט מיוחד לציון 77 שנות עצמאות למדינת ישראל בשנת 5786">
+    <meta name="keywords" content="יום העצמאות, ישראל, 77 שנים, 5786, תפילות, מזמורים, הרב משה לאון יעקובוב">
+    <title>ישראל 77-5786 – הרב משה לאון יעקובוב</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Assistant', sans-serif;
+            background-color: #fdfcf8;
+            color: #222;
+            direction: rtl;
+        }
+
+        header {
+            background: linear-gradient(90deg, #005cbf, #002e7a);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.1)" text-anchor="middle">🇮🇱</text></svg>');
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            position: relative;
+            z-index: 2;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .section {
+            padding: 3rem 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            color: #002e7a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            position: relative;
+            padding-right: 1rem;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 3px;
+            height: 1.5em;
+            background: linear-gradient(to bottom, #005cbf, #002e7a);
+            transform: translateY(-50%);
+        }
+
+        .section p {
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: linear-gradient(90deg, #002e7a, #005cbf);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.1)" text-anchor="middle">🇮🇱</text></svg>');
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .footer-links a svg {
+            width: 1em;
+            height: 1em;
+            fill: currentColor;
+        }
+
+        .footer-social {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-social a:hover {
+            opacity: 1;
+        }
+
+        .footer-social svg {
+            width: 1.2em;
+            height: 1.2em;
+            fill: currentColor;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .footer-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* סגנונות חדשים לתפילה */
+        .prayer-container {
+            position: relative;
+            margin: 2rem 0;
+            width: 100%;
+            aspect-ratio: 827/1262;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .prayer-container.first {
+            background-image: url('./0.png');
+        }
+
+        .prayer-container.second {
+            background-image: url('./1.png');
+        }
+
+        .prayer-container.third {
+            background-image: url('./2.png');
+        }
+
+        .prayer-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            font-family: 'Frank Ruhl Libre', serif;
+            color: #ffd700;
+            text-align: center;
+        }
+
+        .prayer-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 900;
+            text-shadow: #0077ff 0 0 3px, #ff2a00 0 0 6px, #aa00ff 0 0 9px, #00c8ff 0 0 12px;
+        }
+
+        .prayer-content h4 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            text-shadow: #0077ff 0 0 3px, #ff2a00 0 0 6px, #aa00ff 0 0 9px, #00c8ff 0 0 12px;
+        }
+
+        .prayer-text {
+            font-size: 1.4rem;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #ffe600;
+            text-shadow: #0077ff 0 0 3px, #ff2a00 0 0 6px, #aa00ff 0 0 9px, #00c8ff 0 0 12px;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .prayer-text br {
+            margin: 0.2rem 0;
+            display: block;
+            content: "";
+        }
+
+        .prayer-text br+br {
+            margin: 0.8rem 0;
+        }
+
+        .prayer-blessing {
+            margin-top: 1rem;
+            font-weight: 900;
+            font-size: 1.6rem;
+            color: #ffd700;
+            text-shadow: #0077ff 0 0 3px, #ff2a00 0 0 6px, #aa00ff 0 0 9px, #00c8ff 0 0 12px;
+            line-height: 1.3;
+        }
+
+        @media (min-width: 768px) {
+            .prayer-content h3 {
+                font-size: 3.5rem;
+                margin-bottom: 0.7rem;
+            }
+
+            .prayer-content h4 {
+                font-size: 3rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .prayer-text {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            .prayer-text br {
+                margin: 0.3rem 0;
+            }
+
+            .prayer-text br+br {
+                margin: 1rem 0;
+            }
+
+            .prayer-blessing {
+                font-size: 2.2rem;
+                margin-top: 1.5rem;
+                line-height: 1.4;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>ישראל 77-5786</h1>
+        <p>מסע רוחני ומיסטי ביום העצמאות – תפילה, שירה, חזון ועוצמה</p>
+    </header>
+
+    <div class="section">
+        <h2>✨ על הפרויקט</h2>
+        <p>
+            פרויקט "ישראל 77-5786" הוא יצירה משולבת של שירה, חזון, תפילה וגרפיקה מיסטית, המובלת על ידי הרב משה לאון
+            יעקובוב.
+            הפרויקט נולד מתוך רצון לקדש את חג העצמאות באור של קדושה, זוהר וחזון רוחני עמוק.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>📖 מזמורי תפילה ליום העצמאות</h2>
+        <p>
+            שלושה מזמורים מיוחדים שנכתבו לכבוד יום העצמאות ה-77, משלבים בתוכם שירה, תפילה וחזון לעתיד האומה.
+        </p>
+
+        <div class="prayer-container first">
+            <div class="prayer-content">
+                <h3>מִזְמוֹר הַשַּׁחַר הַזּוֹהֵר</h3>
+                <h4>אוֹר מִן הַמַּרְאֶה</h4>
+                <div class="prayer-text">
+                    מִן הַשַּׁחַר יַעֲלֶה אוֹר עֲתִיק, מֵעַל הֶהָרִים יָפְרַח שַׁבְתָּךְ.<br>
+                    כְּמָגוֵן אֵשׁ נוֹצֵץ בַּשְּׁמֵי רוּם, כָּבוֹד ה' עַל יְרוּשָׁלַיִם נִגְלָה.<br><br>
+
+                    מִכְּנַפֵּי עֲנָנִים יִבְקַע זִיו הַשֵּׁם, וּכְנֶסֶךָ שֶׁמֶן עַל רֹאשׁ עַמּוֹ יִתְּנֶה.<br>
+                    צָבְאוּ הַרְרֵי קֹדֶשׁ לְהַלֵּל אֱלוֹהִים, וּמַעֲיָן נְבוּאָה זָרַם בִּנְאוֹתֵיהֶם.<br><br>
+
+                    עַם נוֹסֵעַ בְּדֶרֶךְ תִּקְוָה, עִם דֶּגֶל אֱמוּנָה וְשִׁיר חֲלוֹמוֹת.<br>
+                    וְאֵל שַׁדַּי עֲלֵיהֶם יַזְרִיחַ אֶת אוֹרוֹ, וְיִטַּע שָׁלוֹם בִּגְבוּלָם עַד עֵד.<br><br>
+
+                    אֲרוּרוֹת נָפְלוּ בַּחֶשְׁכָה, וְהַשֶּׁמֶשׁ שָׁבָה לְהַאִיר נְשָׁמוֹת.<br>
+                    שַׁעֲרֵי הָאָרֶץ נִפְתְּחוּ לָאֱמוּנָה, וְרוּחַ הַמַּשִּׁיחַ מְרַחֶפֶת בְּתוֹכָהּ.<br><br>
+                </div>
+                <div class="prayer-blessing">
+                    אֱלֹהֵי הַצְּבָאוֹת, יִהְיוּ שְׁלֵם עִירֶךָ וּשְׁלוּם עַמְּךָ לָנֶצַח.<br>
+                    וּכְבוֹדְךָ יֵרָאֶה עַל כָּל תְּפִלָּה, וּמַלְכוּתְךָ תִּתְעַנֵּג בְּצִיּוֹן שׁוּב.
+                </div>
+            </div>
+        </div>
+
+        <div class="prayer-container second">
+            <div class="prayer-content">
+                <h3>מִזְמוֹר שִׁבְעִים וְשֶׁבַע</h3>
+                <h4>תְּהִלָּה לַתְּקוּמָה</h4>
+                <div class="prayer-text">
+                    שִׁיר לְיוֹם הָאוֹר, שָׁנָה שֶׁבַע וְשֶׁבַע,<br>
+                    בְּקוֹם עָפָר הִרְאִיתָנוּ אוֹר, מֵאֵפֶר – נִשְׁמָתֵנוּ תְּהִלָּה.<br><br>
+
+                    ה' גּוֹאֵל עַמּוֹ מִצָּרוֹת, מֵקִים דּוֹר בְּאֶרֶץ קֹדֶשׁ,<br>
+                    קִיבַּצְתָּ נִדָּחִים בְּחֶסֶד עַתִּיק, בָּנִיתָ נְוֵה תְּפִלָּה מֵאֵין.<br><br>
+
+                    מִצָּפוֹן וְעַד דָּרוֹם יִשָּׁמַע תְּרוּעָה, שָׁלוֹם בַּעֲרֵי שָׁלוֹם,<br>
+                    מִן הַיָּם וְעַד מִזְרָח – תִּפְרַח הָאָרֶץ, גְּבוּל יִשְׂרָאֵל יֵרוֹם.<br><br>
+
+                    לֹא עַל חֶרֶב נִבְטַח, לֹא בְּרֶכֶב נַעֲלֶה,<br>
+                    בְּשֵׁם ה' נִזְכִּיר, בִּבְרִית עוֹלָם נַחְזִיק.<br><br>
+
+                    דָּם קְדוֹשִׁים זוֹרֵחַ מִן הָאֲדָמָה, דִּמְעַת הַשְּׁכִינָה תִּבְנֶה,<br>
+                    בְּקוֹל שִׁירֵנוּ תִּבָּנֶה צִיּוֹן – וְעַל לֵב נִפְעָם תִּשְׁכּוֹן.<br><br>
+
+                    תֵּן שָׁלוֹם בַּמְּדִינָה, אוֹר בַּחֲצוֹתֶיהָ,<br>
+                    תְּנֵהֵג שָׂרֶיהָ בְּצֶדֶק, מַנְהִיגֶיהָ בִּתְבוּנָה.<br><br>
+
+                    הַלְלוּיָהּ מִשָּׁמַיִם, בִּקְהַל קְדוֹשִׁים,<br>
+                    עַם יִשְׂרָאֵל חַי, וּבְאֶרֶץ תִּהְיֶה תִּקְוָתוֹ.<br><br>
+                </div>
+                <div class="prayer-blessing">
+                    בָּרוּךְ אַתָּה ה' גּוֹאֵל יִשְׂרָאֵל,<br>
+                    תִּשְׁכּוֹן תְּהִלָּה בִּירוּשָׁלַיִם, וּמִמִּזְבֵּחֲךָ – שָׁלוֹם עֲדֵי עַד.
+                </div>
+            </div>
+        </div>
+
+        <div class="prayer-container third">
+            <div class="prayer-content">
+                <h3>מזמור לתשפ"ו</h3>
+                <h4>שבעים ושבע שנות תחייה</h4>
+                <div class="prayer-text">
+                    שִׁירוּ לַה' שִׁיר חָדָשׁ, תְּהִלָּתוֹ בִּקְהַל יִשְׂרָאֵל.<br>
+                    יְשֻׁבוּ גְּאוּלִים לְצִיּוֹן בִּרְנָנָה, בִּתְרוּעַ יֹשְׁבֵי אֶרֶץ קֹדֶשׁ יָרִיעוּ.<br><br>
+
+                    גָּדַל ה' וּמְהֻלָּל מְאֹד, בְּכָל דּוֹרוֹת שָׁמַר בְּרִיתוֹ.<br>
+                    בִּנְפֹל עַמּוֹ בַּגָּלוּת לֹא עָזָב, וּבְקַצֵּה כָּל אֶרֶץ שָׁמַע נַאֲקָתָם.<br><br>
+
+                    קִבֵּץ נִדָּחֵי יִשְׂרָאֵל בְּחֶסֶד, הֵשִׁיב שְׁבוּת צִיּוֹן כַּחֲלוֹם תַּעֲלוּמָה.<br>
+                    עָבְרוּ שִׁבְעִים שָׁנָה וְתוֹסֶפֶת שֶׁבַע, וְכָל נְשָׁמָה תְהַלֵּל אֵל גּוֹאֲלָה.<br><br>
+
+                    בָּנוּ גְּדֵרוֹתֵיהֶם בִּדְמָעוֹת וּבִתְפִלּוֹת, וּבַחֲלוֹם שֶׁל דּוֹרוֹת הִשְׁקִימוּ לִפְעֹל.<br>
+                    עַל הָרֵאשִׁים שֶׁל נְפִילֵי צָה"ל נָשְׂאוּ תְּהִלָּה, וְעַל דִּמְעוֹת הַשְּׁכִינָה בָּנָה עַם
+                    סִפּוֹר.<br><br>
+                </div>
+                <div class="prayer-blessing">
+                    הַלְלוּיָהּ לְאֵל יִשְׂרָאֵל, שׁוֹמֵר בְּרִית וְחֶסֶד,<br>
+                    שֶׁמֵּבִיא גְּאֻלָּה בְּאֵמוּנָה, וּמֵעַל לַטֶּבַע.<br>
+                    עֲלוּ בְרִנָּה אֶל צִיּוֹן, נְשְׂאוּ דֶּגֶל הַתְּקוּמָה –<br>
+                    שֶׁבַע וְשִׁבְעִים שָׁנָה לִנְס הַמְּדִינָה!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🖼️ רקעים ותמונות להדפסה</h2>
+        <p>
+            אוסף רקעים מיסטיים, הולוגרפיים ועתירי השראה לציון 77 שנות עצמאות. כל תמונה משדרת עומק, זוהר, ותחושת ייעוד
+            לאומי.
+        </p>
+        <div class="gallery">
+            <img src="./0.png" alt="רקע מגן דוד מיסטי">
+            <img src="./1.png" alt="רקע תפילה לארץ ישראל">
+            <img src="./2.png" alt="רקע תפילה לארץ ישראל">
+            <img src="./3.png" alt="רקע תפילה לארץ ישראל">
+            <img src="./4.png" alt="רקע תפילה לארץ ישראל">
+            <img src="./5.png" alt="רקע תפילה לארץ ישראל">
+            <img src="./6.png" alt="רקע תפילה לארץ ישראל">
+            <img src="./7.png" alt="רקע תפילה לארץ ישראל">
+            <img src="./8.png" alt="רקע תפילה לארץ ישראל">
+
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📥 הצטרפות ומשוב</h2>
+        <p>
+            רוצים להוריד את הקבצים, להצטרף לשיעור מיוחד של הרב ביום העצמאות, או לשתף אותנו בהשראה שקיבלתם? לחצו כאן.
+        </p>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">ישראל 77-5786</div>
+            <div class="footer-text">פרויקט מיוחד לציון 77 שנות עצמאות למדינת ישראל</div>
+            <div class="footer-links">
+                <a href="#">דף הבית</a>
+                <a href="#">אודות הפרויקט</a>
+                <a href="#">תפילות ומזמורים</a>
+                <a href="#">רקעים להדפסה</a>
+                <a href="#">צור קשר</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/AnLoMinus/israel-77-5786" target="_blank">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                    </svg>
+                    קוד המקור בגיטהאב
+                </a>
+            </div>
+            <div class="footer-copyright">
+                © כל הזכויות שמורות לרב משה לאון יעקובוב | 5786
+            </div>
+        </div>
+    </footer>
+    <script src="styles.js"></script>
+    <script src="translations.js"></script>
+</body>
+
+</html>
