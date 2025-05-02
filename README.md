@@ -6,12 +6,17 @@
   <img src="./0.png" alt="לוגו הפרויקט" width="200"/>
   <img src="./1.png" alt="לוגו הפרויקט" width="200"/>
   <img src="./2.png" alt="לוגו הפרויקט" width="200"/>
+  <br>
   <img src="./3.png" alt="לוגו הפרויקט" width="200"/>
   <img src="./4.png" alt="לוגו הפרויקט" width="200"/>
   <img src="./5.png" alt="לוגו הפרויקט" width="200"/>
+  <br>
+
   <img src="./6.png" alt="לוגו הפרויקט" width="200"/>
   <img src="./7.png" alt="לוגו הפרויקט" width="200"/>
   <img src="./8.png" alt="לוגו הפרויקט" width="200"/>
+  <br>
+  
   <h3>מסע רוחני ומיסטי ביום העצמאות – תפילה, שירה, חזון ועוצמה</h3>
   <p>בהובלת הרב משה לאון יעקובוב</p>
 </div>
